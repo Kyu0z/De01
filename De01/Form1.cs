@@ -164,7 +164,7 @@ namespace De01
                     dgvStudent.CurrentCell = dgvStudent.Rows[rowIndex].Cells[0];
                     // Hiển thị thông tin sinh viên tìm thấy
                     txtMSV.Text = dgvStudent.Rows[rowIndex].Cells["dgvMSV"].FormattedValue.ToString();
-                    txtName.Text = dgvStudent.Rows[rowIndex].Cells["Tên"].FormattedValue.ToString();
+                    txtName.Text = dgvStudent.Rows[rowIndex].Cells["MSSV"].FormattedValue.ToString();
                     txtDate.Text = dgvStudent.Rows[rowIndex].Cells["Date"].FormattedValue.ToString();
                     cmbCN.Text = dgvStudent.Rows[rowIndex].Cells["Column3"].FormattedValue.ToString();
                 }
@@ -183,9 +183,9 @@ namespace De01
         {
             for (int i = 0; i < dgvStudent.Rows.Count; i++)
             {    
-                if (dgvStudent.Rows[i].Cells["Tên"].Value != null)
+                if (dgvStudent.Rows[i].Cells["MSSV"].Value != null)
                 {
-                    if (dgvStudent.Rows[i].Cells["Tên"].Value.ToString().Equals(name, StringComparison.OrdinalIgnoreCase))
+                    if (dgvStudent.Rows[i].Cells["MSSV"].Value.ToString().Equals(name, StringComparison.OrdinalIgnoreCase))
                     {
                         return i;
                     }
@@ -202,7 +202,7 @@ namespace De01
 
         private void btnOut_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want to delete?", "YES or NO ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Do you want to out?", "YES or NO ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 this.Close();
